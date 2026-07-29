@@ -38,6 +38,7 @@ body {
     background-color: var(--bg-light);
     color: var(--text-main);
     -webkit-font-smoothing: antialiased;
+    position: relative;
 }
 
 /* --- Professional Navbar Styling --- */
@@ -233,7 +234,7 @@ body {
     margin-bottom: 32px;
 }
 
-/* --- New Hero Stats Section Styling --- */
+/* Hero Stats Section */
 .hero-stats-grid {
     display: flex;
     gap: 32px;
@@ -953,6 +954,44 @@ textarea.form-control {
     color: #64748B;
 }
 
+/* Watermark Author Highlight */
+.watermark-author {
+    color: #60A5FA;
+    font-weight: 600;
+}
+
+/* --- Floating Watermark Badge Styling --- */
+.madhu-watermark-badge {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(15, 23, 42, 0.85);
+    color: #FFFFFF;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 500;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(8px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    letter-spacing: 0.3px;
+    animation: fadeInWatermark 0.5s ease-in-out;
+}
+
+.madhu-watermark-badge strong {
+    color: #60A5FA;
+    font-weight: 600;
+}
+
+@keyframes fadeInWatermark {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 /* ==========================================================
    📱 Mobile Hamburger Menu & Responsive Media Queries
    ========================================================== */
@@ -1131,6 +1170,13 @@ textarea.form-control {
     .footer-grid {
         grid-template-columns: 1fr;
         gap: 32px;
+    }
+    /* Choti screens par badge ka size adjust karne ke liye */
+    .madhu-watermark-badge {
+        bottom: 10px;
+        right: 10px;
+        font-size: 10px;
+        padding: 6px 12px;
     }
 }
 
